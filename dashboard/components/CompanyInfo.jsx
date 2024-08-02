@@ -34,7 +34,7 @@ function CompanyInfo() {
     <>
       <section className="py-6 w-full bg-slate-100 flex-center flex-col gap-2">
         <div className="flex-center gap-4">
-          <h1 className="text-4xl font-bold">YouTube, Inc.</h1>
+          <h1 className="text-4xl font-bold">{state?.data?.company?.legalName}</h1>
           <div className="flex gap-2">
             <Button icon={<i class="ri-star-line"></i>} text={"Swipe"} />
             <Button
@@ -44,7 +44,7 @@ function CompanyInfo() {
             />
           </div>
         </div>
-        <p className="text-center text-base">San Bruno California</p>
+        <p className="text-center text-base">{state?.data?.company?.headquarters}</p>
       </section>
       <section className="">
         <div className="wrapper flex gap-4 justify-between card-container">
