@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ========================================== TAILWIND STYLES */
+@layer utilities {
+  .wrapper {
+    @apply max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .text-color{
+    @apply font-bold text-slate-600 text-[15px]
+  }
+
+}
+
+.wrapper{
+  width:80%;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+
+@media(max-width:1400px){
+  .wrapper{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card{
+    width:100%;
+    margin: 0 auto;
+  }
+}
+
+@media(max-width:1250px){
+  .wrapper{
+    width: 90%;
+    flex-direction: column;
+  }
+}
