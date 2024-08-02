@@ -84,22 +84,25 @@ const Table = ({ list }) => {
           <table className="table-auto overflow-scroll md:overflow-auto w-full text-left font-inter border ">
             <thead className="rounded-lg text-base text-white font-semibold w-full bg-white">
               <tr className="">
-                <th className="py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap">
+                <th className="py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap text-center">
                   Thumbnail
                 </th>
-                <th className="py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap">
+                <th className="py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap text-center">
                   Title
                 </th>
-                <th className="py-3 px-3  justify-center gap-1 text-slate-400 sm:text-base font-medium whitespace-nowrap">
+                <th className="py-3 px-3  justify-center gap-1 text-slate-400 sm:text-base font-medium whitespace-nowrap text-center">
                   Brand
                 </th>
-                <th className="py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap">
+                <th className="py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap text-center">
                   Total ad spend
                 </th>
-                <th className="py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap">
+                <th className="py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap text-center">
                   Ad spend 30
                 </th>
-                <th className="flex items-center py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap gap-1">
+                <th className="py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap text-center">
+                  Published Date
+                </th>
+                <th className="flex items-center py-3 px-3 text-slate-400 sm:text-base font-medium whitespace-nowrap gap-1 text-center">
                   Duration
                 </th>
               </tr>
@@ -164,6 +167,16 @@ const Table = ({ list }) => {
                         : "border-t"
                     } min-w-[250px]`}>
                     <p className="text-center">{data?.last30Days === null ? 0 : convertNumberToUSD(Number(data?.last30Days)) }</p>
+                  </td>
+                  <td
+                    className={`py-2 px-3 text-base  font-normal ${
+                      index == 0
+                        ? "border-t-2"
+                        : index == rowsToShow?.length
+                        ? "border-y"
+                        : "border-t"
+                    } min-w-[250px]`}>
+                    <p className="text-center">{data?.publishedAt?.split('T')[0]}</p>
                   </td>
                   <td
                     className={`py-5 px-4 text-base  font-normal ${
